@@ -1,0 +1,39 @@
+{
+  "name": "trpc-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "bun drizzle-kit generate",
+    "db:push": "bun drizzle-kit push",
+    "db": "bun db:generate && bun db:push"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.56.2",
+    "@trpc/client": "^11.0.0-rc.522",
+    "@trpc/next": "^11.0.0-rc.522",
+    "@trpc/react-query": "^11.0.0-rc.522",
+    "@trpc/server": "^11.0.0-rc.522",
+    "drizzle-orm": "^0.33.0",
+    "next": "14.2.13",
+    "postgres": "^3.4.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@t3-oss/env-core": "^0.11.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.24.2",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.13",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
