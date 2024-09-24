@@ -1,29 +1,25 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import './globals.css';
+import { Poppins } from 'next/font/google';
 import ReactQueryProivder from './provider';
+import { Toaster } from 'sonner';
+import './globals.css';
 
-const geistSans = localFont({
-   src: './fonts/GeistVF.woff',
-   variable: '--font-geist-sans',
-   weight: '100 900',
-});
-const geistMono = localFont({
-   src: './fonts/GeistMonoVF.woff',
-   variable: '--font-geist-mono',
-   weight: '100 900',
-});
+const pop = Poppins({ subsets: ['latin'], weight: '400' });
 
 export const metadata: Metadata = {
    title: 'TRPC is awesome 🚀',
    description: 'TRPC is awesome 🚀',
 };
 
-export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
    return (
       <html lang='en'>
-         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <ReactQueryProivder>{children}</ReactQueryProivder>
+         <body className={`${pop.className} container mx-auto py-12`}>
+            <ReactQueryProivder>
+               <Toaster richColors />
+
+               {children}
+            </ReactQueryProivder>
          </body>
       </html>
    );

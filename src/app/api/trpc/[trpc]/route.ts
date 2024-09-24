@@ -1,6 +1,6 @@
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { db } from "@/drizzle";
-
+import { auth } from "@/actions/auth";
 import { appRouter } from "@/server";
 
 const handler = (req: Request) =>
@@ -11,6 +11,7 @@ const handler = (req: Request) =>
     createContext: () => ({
       req,
       db,
+      auth,
     }),
   });
 

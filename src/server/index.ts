@@ -1,9 +1,11 @@
-import { userRouter } from "./routes/user";
+import { authRouter } from "./routes/auth";
+import { profileRouter } from "./routes/profile";
 import { router } from "./trpc";
 
 
 export const appRouter = router({
-  user: userRouter,
+  auth: authRouter,
+  profile: profileRouter,
 });
 
 
